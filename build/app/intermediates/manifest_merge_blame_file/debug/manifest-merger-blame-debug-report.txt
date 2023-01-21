@@ -1,0 +1,125 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.customer_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="18"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/abhayupadhyay/Data/personal/customer_app/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Users/abhayupadhyay/Data/personal/customer_app/android/app/src/debug/AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->/Users/abhayupadhyay/Data/personal/customer_app/android/app/src/main/AndroidManifest.xml:3:5-78
+16-->/Users/abhayupadhyay/Data/personal/customer_app/android/app/src/main/AndroidManifest.xml:3:22-76
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-65
+17-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-62
+18
+19    <uses-feature android:name="android.hardware.camera" />
+19-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-60
+19-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:11:19-57
+20
+21    <uses-permission android:name="android.permission.FLASHLIGHT" />
+21-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-69
+21-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-66
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+22-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+22-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+23
+24    <application
+25        android:name="android.app.Application"
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.8.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+29        android:label="customer_app"
+30        android:largeHeap="true"
+30-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-33
+31        android:theme="@style/Theme.AppCompat.NoActionBar" >
+31-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-59
+32        <activity
+33            android:name="com.example.customer_app.MainActivity"
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+35            android:exported="true"
+36            android:hardwareAccelerated="true"
+37            android:launchMode="singleTop"
+38            android:theme="@style/LaunchTheme"
+39            android:windowSoftInputMode="adjustResize" >
+40
+41            <!--
+42                 Specifies an Android theme to apply to this Activity as soon as
+43                 the Android process has started. This theme is visible to the user
+44                 while the Flutter UI initializes. After that, this theme continues
+45                 to determine the Window background behind the Flutter UI.
+46            -->
+47            <meta-data
+48                android:name="io.flutter.embedding.android.NormalTheme"
+49                android:resource="@style/NormalTheme" />
+50
+51            <intent-filter>
+52                <action android:name="android.intent.action.MAIN" />
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+55            </intent-filter>
+56        </activity>
+57        <!--
+58             Don't delete the meta-data below.
+59             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+60        -->
+61        <meta-data
+62            android:name="flutterEmbedding"
+63            android:value="2" />
+64
+65        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
+65-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-91
+65-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:18:19-88
+66
+67        <service
+67-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
+68            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+68-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
+69            android:enabled="true"
+69-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+70            android:exported="false"
+70-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+71            android:foregroundServiceType="location" />
+71-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
+72
+73        <uses-library
+73-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+74            android:name="androidx.window.extensions"
+74-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+75            android:required="false" />
+75-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+76        <uses-library
+76-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+77            android:name="androidx.window.sidecar"
+77-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+78            android:required="false" />
+78-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+79
+80        <activity
+80-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+81-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+82            android:exported="false"
+82-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+83-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+84
+85        <meta-data
+85-->[com.google.android.gms:play-services-basement:18.0.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+86            android:name="com.google.android.gms.version"
+86-->[com.google.android.gms:play-services-basement:18.0.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+87            android:value="@integer/google_play_services_version" />
+87-->[com.google.android.gms:play-services-basement:18.0.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+88    </application>
+89
+90</manifest>
