@@ -1,5 +1,6 @@
 import 'package:customer_app/component/badgeicon.dart';
 import 'package:customer_app/component/shopcard.dart';
+import 'package:customer_app/component/showqr.dart';
 import 'package:customer_app/config/colors.dart';
 import 'package:customer_app/provider/rootprovider.dart';
 import 'package:customer_app/screens/account/account.dart';
@@ -7,7 +8,6 @@ import 'package:customer_app/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../utils/helper.dart';
 
 class Homescreen extends ConsumerStatefulWidget {
   const Homescreen({Key? key}) : super(key: key);
@@ -17,8 +17,21 @@ class Homescreen extends ConsumerStatefulWidget {
 }
 
 class _HomescreenState extends ConsumerState<Homescreen> {
-  int _selectedIndex = 0;
   RootModel? readProvider;
+  int _selectedIndex = 0;
+  var billId;
+  var verified = true;
+
+  // check if bill id is available
+  checkVerificationStatus() async {
+    var id = readProvider!.billProviderRead.billId;
+    if (id != "") {
+      setState(() {
+        billId = id;
+        verified = false;
+      });
+    }
+  }
 
   // get bottom tab screen on the basis of index
   Widget getBottomTabScreens(int index) {
@@ -40,7 +53,10 @@ class _HomescreenState extends ConsumerState<Homescreen> {
   // on back press function
   Future<bool> _onBackPressed() async {
     if (_selectedIndex == 0) {
-      return true;
+      if (verified == true) {
+        return true;
+      }
+      return false;
     } else {
       setState(() {
         _selectedIndex = 0;
@@ -54,49 +70,65 @@ class _HomescreenState extends ConsumerState<Homescreen> {
     setState(() {
       readProvider = ref.read(rootProvider).AllProvider();
     });
+    checkVerificationStatus();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     var widthsize = MediaQuery.of(context).size.width;
-    var heightsize = MediaQuery.of(context).size.height;
     RootModel watchProvider = ref.watch(rootProvider).AllProvider();
 
     return WillPopScope(
       onWillPop: _onBackPressed,
-      child: Scaffold(
-        body: Center(
-          child: getBottomTabScreens(_selectedIndex),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: widthsize * 6 / 100),
-              label: 'Home',
+      child: Stack(
+        children: [
+          Scaffold(
+            body: Center(
+              child: getBottomTabScreens(_selectedIndex),
             ),
-            BottomNavigationBarItem(
-                icon: BadgeIcon(
-                  icon: Icon(Icons.shopping_cart, size: widthsize * 6 / 100),
-                  badgeCount: watchProvider!.cartProviderWatch.carts.length,
+            bottomNavigationBar: BottomNavigationBar(
+              items: <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home, size: widthsize * 6 / 100),
+                  label: 'Home',
                 ),
-                label: 'Cart'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle, size: widthsize * 6 / 100),
-              label: 'Account',
+                BottomNavigationBarItem(
+                    icon: BadgeIcon(
+                      icon:
+                          Icon(Icons.shopping_cart, size: widthsize * 6 / 100),
+                      badgeCount: watchProvider.cartProviderWatch.carts.length,
+                    ),
+                    label: 'Cart'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle, size: widthsize * 6 / 100),
+                  label: 'Account',
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              selectedItemColor: AppColors.blue,
+              unselectedItemColor: AppColors.disable,
+              unselectedFontSize: widthsize * 3 / 100,
+              selectedFontSize: widthsize * 3 / 100,
+              onTap: (index) => {
+                setState(() {
+                  _selectedIndex = index;
+                })
+              },
             ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: AppColors.blue,
-          unselectedItemColor: AppColors.disable,
-          unselectedFontSize: widthsize * 3 / 100,
-          selectedFontSize: widthsize * 3 / 100,
-          onTap: (index) => {
-            setState(() {
-              _selectedIndex = index;
-            })
-          },
-        ),
+          ),
+
+          // show if not verified
+          verified
+              ? Container()
+              : ShowQr(
+                  billId: billId,
+                  onDone: () => {
+                        setState(() {
+                          verified = true;
+                        })
+                      })
+        ],
       ),
     );
   }
@@ -111,7 +143,6 @@ class Home extends ConsumerStatefulWidget {
 }
 
 class _HomeState extends ConsumerState<Home> {
-  Helper helper = new Helper();
   RootModel? readProvider;
 
   @override
@@ -158,8 +189,8 @@ class _HomeState extends ConsumerState<Home> {
                 Container(
                   margin: EdgeInsets.only(left: widthsize * 2 / 100),
                   child: Text(
-                    watchProvider!.shopProviderWatch.insideShop
-                        ? watchProvider!.shopProviderWatch.shops[0].shopName!
+                    watchProvider.shopProviderWatch.insideShop
+                        ? watchProvider.shopProviderWatch.shops[0].shopName!
                         : "Unnamed Road",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -190,11 +221,11 @@ class _HomeState extends ConsumerState<Home> {
               padding: EdgeInsets.only(bottom: heightsize * 5 / 100),
               scrollDirection: Axis.vertical,
               child: Column(
-                children: watchProvider!.shopProviderWatch.insideShop
-                    ? watchProvider!.shopProviderWatch.shops.skip(1).map((e) {
+                children: watchProvider.shopProviderWatch.insideShop
+                    ? watchProvider.shopProviderWatch.shops.skip(1).map((e) {
                         return ShopCard(shopValue: e);
                       }).toList()
-                    : watchProvider!.shopProviderWatch.shops.map((e) {
+                    : watchProvider.shopProviderWatch.shops.map((e) {
                         return ShopCard(shopValue: e);
                       }).toList(),
               ),

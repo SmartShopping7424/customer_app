@@ -2,13 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:customer_app/screens/app.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:customer_app/utils/pushNotification.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(ProviderScope(child: const MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
+
+  @override
+  ConsumerState<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> {
+  @override
+  void initState() {
+    ref.read(pushNotificationProvider).init();
+    super.initState();
+  }
 
   // This widget is the root of your application.
   @override
@@ -38,5 +53,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

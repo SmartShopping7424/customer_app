@@ -2,6 +2,7 @@ import 'package:customer_app/component/cartcard.dart';
 import 'package:customer_app/component/emptydata.dart';
 import 'package:customer_app/config/colors.dart';
 import 'package:customer_app/provider/rootprovider.dart';
+import 'package:customer_app/screens/payment/payment.dart';
 import 'package:customer_app/utils/barcode.dart';
 import 'package:customer_app/utils/toaster.dart';
 import 'package:flutter/material.dart';
@@ -58,6 +59,11 @@ class _CartState extends ConsumerState<Cart> {
   onPlus(e, type) {
     readProvider!.cartProviderRead.updateCartDataAction(
         readProvider!.cartProviderRead.carts.indexOf(e), type, mobile, shopId);
+  }
+
+  // on checkout
+  onCheckout() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Payment()));
   }
 
   // update state
@@ -124,7 +130,7 @@ class _CartState extends ConsumerState<Cart> {
                 ),
 
                 // rest container
-                watchProvider!.cartProviderWatch.carts.length > 0
+                watchProvider.cartProviderWatch.carts.length > 0
                     ? Expanded(
                         flex: 1,
                         child: SingleChildScrollView(
@@ -148,7 +154,7 @@ class _CartState extends ConsumerState<Cart> {
                       ),
 
                 // bottom checkout button container
-                watchProvider!.cartProviderWatch.totalSellingAmount > 0
+                watchProvider.cartProviderWatch.totalSellingAmount > 0
                     ? Container(
                         height: heightsize * 5 / 100,
                         clipBehavior: Clip.hardEdge,
@@ -199,13 +205,15 @@ class _CartState extends ConsumerState<Cart> {
                               child: MaterialButton(
                                 elevation: 0,
                                 padding: EdgeInsets.all(widthsize * 2.5 / 100),
-                                onPressed: () {},
+                                onPressed: () {
+                                  onCheckout();
+                                },
                                 child: Row(
                                   children: [
                                     // counts of items
                                     Container(
                                       child: Text(
-                                        '${watchProvider!.cartProviderWatch.carts.length} items',
+                                        '${watchProvider.cartProviderWatch.carts.length} items',
                                         style: TextStyle(
                                           fontSize: widthsize * 3 / 100,
                                           color: AppColors.white_text,
@@ -218,7 +226,7 @@ class _CartState extends ConsumerState<Cart> {
                                         margin: EdgeInsets.only(
                                             left: widthsize * 3 / 100),
                                         child: Text(
-                                          '\u{20B9}${watchProvider!.cartProviderWatch.totalSellingAmount.toStringAsFixed(2)}',
+                                          '\u{20B9}${watchProvider.cartProviderWatch.totalSellingAmount.toStringAsFixed(2)}',
                                           style: TextStyle(
                                               fontSize: widthsize * 5 / 100,
                                               fontWeight: FontWeight.bold,
@@ -226,15 +234,15 @@ class _CartState extends ConsumerState<Cart> {
                                         )),
 
                                     // discounted price
-                                    watchProvider!.cartProviderWatch
+                                    watchProvider.cartProviderWatch
                                                 .totalSellingAmount <
-                                            watchProvider!.cartProviderWatch
+                                            watchProvider.cartProviderWatch
                                                 .totalMrpAmount
                                         ? Container(
                                             margin: EdgeInsets.only(
                                                 left: widthsize * 2 / 100),
                                             child: Text(
-                                              '\u{20B9}${watchProvider!.cartProviderWatch.totalMrpAmount.toStringAsFixed(2)}',
+                                              '\u{20B9}${watchProvider.cartProviderWatch.totalMrpAmount.toStringAsFixed(2)}',
                                               style: TextStyle(
                                                   fontSize: widthsize * 4 / 100,
                                                   fontWeight: FontWeight.w600,

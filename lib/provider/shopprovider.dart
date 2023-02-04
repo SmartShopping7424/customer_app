@@ -28,4 +28,13 @@ class ShopProvider extends ChangeNotifier {
     insideShop = true;
     notifyListeners();
   }
+
+  // clear shop data
+  clearShopData() {
+    shops.clear();
+    radius = 20;
+    insideShop = false;
+    LocalStorage.clearLocalStorage('shops');
+    return;
+  }
 }

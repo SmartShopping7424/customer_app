@@ -1,3 +1,4 @@
+import 'package:customer_app/screens/app.dart';
 import 'package:flutter/material.dart';
 import 'package:customer_app/config/colors.dart';
 import 'package:customer_app/model/cartmodel.dart';
@@ -127,27 +128,22 @@ class _CartCardState extends State<CartCard> {
           Container(
             width: widthsize * 18 / 100,
             height: heightsize * 3 / 100,
-            padding: EdgeInsets.all(0),
-            margin: EdgeInsets.only(
-                top: heightsize * 3 / 100, right: widthsize * 3 / 100),
+            clipBehavior: Clip.hardEdge,
+            margin: EdgeInsets.only(right: widthsize * 3 / 100),
             decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius:
-                    BorderRadius.all(Radius.circular(widthsize * 1 / 100)),
-                border: Border.all(color: AppColors.blue_opacity)),
+              color: AppColors.blue,
+              borderRadius:
+                  BorderRadius.all(Radius.circular(widthsize * 2 / 100)),
+            ),
             child: Row(
               children: [
+                // - button
                 Container(
                   width: widthsize * 6 / 100,
                   height: heightsize * 3 / 100,
-                  decoration: BoxDecoration(
-                      border: Border(
-                          right: BorderSide(color: AppColors.blue_opacity))),
                   child: MaterialButton(
                     elevation: 0,
                     padding: EdgeInsets.all(0),
-                    minWidth: widthsize * 7 / 100,
-                    height: heightsize * 3 / 100,
                     onPressed: () => {
                       if (e.productQuantity == 1)
                         {widget.onMinus(e, "remove")}
@@ -157,44 +153,44 @@ class _CartCardState extends State<CartCard> {
                     child: Text(
                       "-",
                       style: TextStyle(
-                          fontSize: widthsize * 5 / 100,
-                          color: AppColors.blue,
-                          fontWeight: FontWeight.w600),
+                        fontSize: widthsize * 5 / 100,
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
                 ),
+
+                // quantity
                 Container(
-                  width: widthsize * 5.5 / 100,
+                  width: widthsize * 6 / 100,
                   height: heightsize * 3 / 100,
                   child: Center(
                     child: Text(
                       e.productQuantity.toString(),
                       style: TextStyle(
                           fontSize: widthsize * 4 / 100,
-                          color: AppColors.black_text,
+                          color: AppColors.white,
                           fontWeight: FontWeight.w600),
                     ),
                   ),
                 ),
+
+                // + button
                 Container(
                   width: widthsize * 6 / 100,
-                  decoration: BoxDecoration(
-                      border: Border(
-                          left: BorderSide(color: AppColors.blue_opacity))),
+                  height: heightsize * 3 / 100,
                   child: MaterialButton(
                     elevation: 0,
                     padding: EdgeInsets.all(0),
-                    minWidth: widthsize * 7 / 100,
-                    height: heightsize * 3 / 100,
                     onPressed: () => {
                       {widget.onPlus(e, "plus")}
                     },
                     child: Text(
                       "+",
                       style: TextStyle(
-                          fontSize: widthsize * 5 / 100,
-                          color: AppColors.blue,
-                          fontWeight: FontWeight.w600),
+                        fontSize: widthsize * 5 / 100,
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
                 ),

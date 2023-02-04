@@ -1,6 +1,7 @@
-import 'package:customer_app/utils/localstorage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:intl/intl.dart';
 import '../config/colors.dart';
 
 // delay in milliseconds seconds
@@ -18,13 +19,33 @@ class Helper {
         return Container(
           color: Colors.transparent,
           child: Center(
-            child: CircularProgressIndicator(
-              color: Colors.white,
+            child: SpinKitRing(
+              color: AppColors.white,
+              size: MediaQuery.of(context).size.width * 6 / 100,
+              lineWidth: 2,
+              duration: Duration(milliseconds: 1000),
             ),
           ),
         );
       },
     );
+  }
+
+  // content loader
+  static contentLoader(context) {
+    return Flexible(
+        child: Center(
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 5 / 100,
+        height: MediaQuery.of(context).size.width * 5 / 100,
+        child: SpinKitRing(
+          color: AppColors.blue,
+          size: MediaQuery.of(context).size.width * 6 / 100,
+          lineWidth: 2,
+          duration: Duration(milliseconds: 1000),
+        ),
+      ),
+    ));
   }
 
   // make array of object unique by key
@@ -85,6 +106,36 @@ class Helper {
         ],
       ),
     );
+  }
+
+  // date converter
+  static dateConverter(date) {
+    // define month
+    var MONTHS = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
+
+    var inputFormat = DateFormat('dd-MM-yyyy');
+    var unFormattedDate = inputFormat.parse(date);
+    var outputFormat = DateFormat('yyyy-MM-dd');
+    var formattedDate = outputFormat.format(unFormattedDate);
+    var now = DateTime.parse(formattedDate.toString());
+    return now.day.toString().padLeft(2, "0") +
+        " " +
+        MONTHS[now.month - 1].toString().padLeft(2, "0") +
+        " " +
+        now.year.toString();
   }
 
   // close app

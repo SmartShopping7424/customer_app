@@ -1,11 +1,11 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.customer_app"
+3    package="com.dragmart"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="18"
+8        android:minSdkVersion="19"
 9        android:targetSdkVersion="31" />
 10    <!--
 11         The INTERNET permission is required for development. Specifically,
@@ -18,108 +18,395 @@
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 16-->/Users/abhayupadhyay/Data/personal/customer_app/android/app/src/main/AndroidManifest.xml:3:5-78
 16-->/Users/abhayupadhyay/Data/personal/customer_app/android/app/src/main/AndroidManifest.xml:3:22-76
-17    <uses-permission android:name="android.permission.CAMERA" />
-17-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-65
-17-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-62
-18
-19    <uses-feature android:name="android.hardware.camera" />
-19-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-60
-19-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:11:19-57
-20
-21    <uses-permission android:name="android.permission.FLASHLIGHT" />
-21-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-69
-21-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-66
-22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-22-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
-22-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
-23
-24    <application
-25        android:name="android.app.Application"
-26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.8.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
-27        android:debuggable="true"
-28        android:icon="@mipmap/ic_launcher"
-29        android:label="customer_app"
-30        android:largeHeap="true"
-30-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-33
-31        android:theme="@style/Theme.AppCompat.NoActionBar" >
-31-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-59
-32        <activity
-33            android:name="com.example.customer_app.MainActivity"
-34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-35            android:exported="true"
-36            android:hardwareAccelerated="true"
-37            android:launchMode="singleTop"
-38            android:theme="@style/LaunchTheme"
-39            android:windowSoftInputMode="adjustResize" >
-40
-41            <!--
-42                 Specifies an Android theme to apply to this Activity as soon as
-43                 the Android process has started. This theme is visible to the user
-44                 while the Flutter UI initializes. After that, this theme continues
-45                 to determine the Window background behind the Flutter UI.
-46            -->
-47            <meta-data
-48                android:name="io.flutter.embedding.android.NormalTheme"
-49                android:resource="@style/NormalTheme" />
+17    <uses-permission android:name="android.permission.WAKE_LOCK" />
+17-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
+17-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-65
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permissions options for the `notification` group -->
+18-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+18-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-76
+19    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+19-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-77
+19-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-74
+20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+20-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+20-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-65
+21-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-62
+22
+23    <uses-feature android:name="android.hardware.camera" />
+23-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-60
+23-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:11:19-57
+24
+25    <uses-permission android:name="android.permission.FLASHLIGHT" />
+25-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-69
+25-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-66
+26    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+26-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+26-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+27    <uses-permission android:name="android.permission.VIBRATE" />
+27-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-66
+27-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-63
+28    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+28-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-81
+28-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-78
+29    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+29-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-79
+29-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-76
+30    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+30-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:28:5-82
+30-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:28:22-79
+31    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+31-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/9fe8d1b46c71e9b954a639d6f927ec09/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:25:5-79
+31-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/9fe8d1b46c71e9b954a639d6f927ec09/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:25:22-76
+32    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+32-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:26:5-110
+32-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:26:22-107
+33
+34    <application
+35        android:name="android.app.Application"
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.8.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/42e6491f5f37d2219727138ee1097e2e/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+37        android:debuggable="true"
+38        android:icon="@mipmap/ic_launcher"
+39        android:label="customer_app"
+40        android:largeHeap="true"
+40-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-33
+41        android:theme="@style/Theme.AppCompat.NoActionBar" >
+41-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-59
+42        <activity
+43            android:name="com.example.customer_app.MainActivity"
+44            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+45            android:exported="true"
+46            android:hardwareAccelerated="true"
+47            android:launchMode="singleTop"
+48            android:theme="@style/LaunchTheme"
+49            android:windowSoftInputMode="adjustResize" >
 50
-51            <intent-filter>
-52                <action android:name="android.intent.action.MAIN" />
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-55            </intent-filter>
-56        </activity>
-57        <!--
-58             Don't delete the meta-data below.
-59             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-60        -->
-61        <meta-data
-62            android:name="flutterEmbedding"
-63            android:value="2" />
-64
-65        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
-65-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-91
-65-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:18:19-88
+51            <!--
+52                 Specifies an Android theme to apply to this Activity as soon as
+53                 the Android process has started. This theme is visible to the user
+54                 while the Flutter UI initializes. After that, this theme continues
+55                 to determine the Window background behind the Flutter UI.
+56            -->
+57            <meta-data
+58                android:name="io.flutter.embedding.android.NormalTheme"
+59                android:resource="@style/NormalTheme" />
+60            <meta-data
+61                android:name="com.google.firebase.messaging.default_notification_channel_id"
+62                android:value="dragmart" />
+63
+64            <intent-filter>
+65                <action android:name="android.intent.action.MAIN" />
 66
-67        <service
-67-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
-68            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-68-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
-69            android:enabled="true"
-69-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
-70            android:exported="false"
-70-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
-71            android:foregroundServiceType="location" />
-71-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
-72
-73        <uses-library
-73-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-74            android:name="androidx.window.extensions"
-74-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-75            android:required="false" />
-75-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-76        <uses-library
-76-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-77            android:name="androidx.window.sidecar"
-77-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-78            android:required="false" />
-78-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-79
-80        <activity
-80-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-81-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-82            android:exported="false"
-82-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-83-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-84
-85        <meta-data
-85-->[com.google.android.gms:play-services-basement:18.0.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
-86            android:name="com.google.android.gms.version"
-86-->[com.google.android.gms:play-services-basement:18.0.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
-87            android:value="@integer/google_play_services_version" />
-87-->[com.google.android.gms:play-services-basement:18.0.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
-88    </application>
+67                <category android:name="android.intent.category.LAUNCHER" />
+68            </intent-filter>
+69        </activity>
+70        <!--
+71             Don't delete the meta-data below.
+72             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+73        -->
+74        <meta-data
+75            android:name="flutterEmbedding"
+76            android:value="2" />
+77
+78        <service
+78-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-19:72
+79            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+79-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-107
+80            android:exported="false"
+80-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+81            android:permission="android.permission.BIND_JOB_SERVICE" />
+81-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-69
+82        <service
+82-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-26:19
+83            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+83-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-97
+84            android:exported="false" >
+84-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-37
+85            <intent-filter>
+85-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
+86                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+86-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
+86-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
+87            </intent-filter>
+88        </service>
 89
-90</manifest>
+90        <receiver
+90-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-35:20
+91            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+91-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-98
+92            android:exported="true"
+92-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-36
+93            android:permission="com.google.android.c2dm.permission.SEND" >
+93-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-73
+94            <intent-filter>
+94-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
+95                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+95-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
+95-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
+96            </intent-filter>
+97        </receiver>
+98
+99        <service
+99-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-41:19
+100            android:name="com.google.firebase.components.ComponentDiscoveryService"
+100-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:37:18-89
+101            android:directBootAware="true"
+101-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:34:13-43
+102            android:exported="false" >
+102-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/0131fc0741f18b1316f82d5c3c63e061/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:10:13-37
+103            <meta-data
+103-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-40:85
+104                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+104-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:39:17-128
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:40:17-82
+106            <meta-data
+106-->[:firebase_core] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+107                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+107-->[:firebase_core] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[:firebase_core] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/0131fc0741f18b1316f82d5c3c63e061/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:11:13-13:85
+110                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+110-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/0131fc0741f18b1316f82d5c3c63e061/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:12:17-126
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/0131fc0741f18b1316f82d5c3c63e061/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:13:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-common-ktx:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/49e24fbc43ca8d91b086670d3cb456c6/transformed/jetified-firebase-common-ktx-20.3.0/AndroidManifest.xml:14:13-16:85
+113                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+113-->[com.google.firebase:firebase-common-ktx:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/49e24fbc43ca8d91b086670d3cb456c6/transformed/jetified-firebase-common-ktx-20.3.0/AndroidManifest.xml:15:17-113
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-common-ktx:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/49e24fbc43ca8d91b086670d3cb456c6/transformed/jetified-firebase-common-ktx-20.3.0/AndroidManifest.xml:16:17-82
+115            <meta-data
+115-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:55:13-57:85
+116                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+116-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:56:17-119
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:57:17-82
+118            <meta-data
+118-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/abhayupadhyay/.gradle/caches/transforms-3/3cf916311ea46cca191077538f98d969/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+119                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+119-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/abhayupadhyay/.gradle/caches/transforms-3/3cf916311ea46cca191077538f98d969/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/abhayupadhyay/.gradle/caches/transforms-3/3cf916311ea46cca191077538f98d969/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+121            <meta-data
+121-->[com.google.firebase:firebase-iid:21.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/1db1b2873326ed90786bb9c16ff9ea36/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
+122                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+122-->[com.google.firebase:firebase-iid:21.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/1db1b2873326ed90786bb9c16ff9ea36/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
+123                android:value="com.google.firebase.components.ComponentRegistrar" />
+123-->[com.google.firebase:firebase-iid:21.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/1db1b2873326ed90786bb9c16ff9ea36/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
+124            <meta-data
+124-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/9fe8d1b46c71e9b954a639d6f927ec09/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:31:13-33:85
+125                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+125-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/9fe8d1b46c71e9b954a639d6f927ec09/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:32:17-139
+126                android:value="com.google.firebase.components.ComponentRegistrar" />
+126-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/9fe8d1b46c71e9b954a639d6f927ec09/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:33:17-82
+127            <meta-data
+127-->[com.google.firebase:firebase-installations:17.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/7bcf2b0de095e1d4f0223c6097bbca15/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:17:13-19:85
+128                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+128-->[com.google.firebase:firebase-installations:17.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/7bcf2b0de095e1d4f0223c6097bbca15/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:18:17-127
+129                android:value="com.google.firebase.components.ComponentRegistrar" />
+129-->[com.google.firebase:firebase-installations:17.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/7bcf2b0de095e1d4f0223c6097bbca15/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:19:17-82
+130        </service>
+131
+132        <provider
+132-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-47:38
+133            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+133-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-102
+134            android:authorities="com.dragmart.flutterfirebasemessaginginitprovider"
+134-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-88
+135            android:exported="false"
+135-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-37
+136            android:initOrder="99" />
+136-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-35
+137
+138        <service
+138-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
+139            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+139-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
+140            android:enabled="true"
+140-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+141            android:exported="false"
+141-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+142            android:foregroundServiceType="location" />
+142-->[:geolocator_android] /Users/abhayupadhyay/Data/personal/customer_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
+143
+144        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
+144-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-91
+144-->[:flutter_barcode_scanner] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:18:19-88
+145
+146        <receiver
+146-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+147            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
+147-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-91
+148            android:exported="false" />
+148-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+149        <receiver
+149-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+150            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+150-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-97
+151            android:exported="false" />
+151-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+152        <receiver
+152-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-31:20
+153            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+153-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-101
+154            android:exported="false" >
+154-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+155            <intent-filter>
+155-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-30:29
+156                <action android:name="android.intent.action.BOOT_COMPLETED" />
+156-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-79
+156-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:25-76
+157                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+157-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:27:17-84
+157-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:27:25-81
+158                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+158-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-82
+158-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-79
+159                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+159-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:17-82
+159-->[:flutter_local_notifications] /Users/abhayupadhyay/Data/personal/customer_app/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:25-79
+160            </intent-filter>
+161        </receiver>
+162
+163        <uses-library
+163-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/36a45b2abb854eca36c578fbec6ed4df/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+164            android:name="androidx.window.extensions"
+164-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/36a45b2abb854eca36c578fbec6ed4df/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+165            android:required="false" />
+165-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/36a45b2abb854eca36c578fbec6ed4df/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+166        <uses-library
+166-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/36a45b2abb854eca36c578fbec6ed4df/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+167            android:name="androidx.window.sidecar"
+167-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/36a45b2abb854eca36c578fbec6ed4df/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+168            android:required="false" />
+168-->[androidx.window:window:1.0.0-beta04] /Users/abhayupadhyay/.gradle/caches/transforms-3/36a45b2abb854eca36c578fbec6ed4df/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+169
+170        <receiver
+170-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:31:9-38:20
+171            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+171-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:32:13-78
+172            android:exported="true"
+172-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:33:13-36
+173            android:permission="com.google.android.c2dm.permission.SEND" >
+173-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:34:13-73
+174            <intent-filter>
+174-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
+175                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+175-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
+175-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
+176            </intent-filter>
+177        </receiver>
+178        <!--
+179             FirebaseMessagingService performs security checks at runtime,
+180             but set to not exported to explicitly avoid allowing another app to call it.
+181        -->
+182        <service
+182-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:44:9-51:19
+183            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+183-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:45:13-82
+184            android:directBootAware="true"
+184-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:46:13-43
+185            android:exported="false" >
+185-->[com.google.firebase:firebase-messaging:23.1.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/66de4305226ff0cb8bffa4b4ba4a8b75/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:47:13-37
+186            <intent-filter android:priority="-500" >
+186-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
+187                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+187-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
+187-->[:firebase_messaging] /Users/abhayupadhyay/Data/personal/customer_app/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
+188            </intent-filter>
+189        </service>
+190        <service
+190-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/b575f61dd6993583ac7c69c3796215af/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+191            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+191-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/b575f61dd6993583ac7c69c3796215af/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+192            android:exported="false" >
+192-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/b575f61dd6993583ac7c69c3796215af/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+193            <meta-data
+193-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/b575f61dd6993583ac7c69c3796215af/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+194                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+194-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/b575f61dd6993583ac7c69c3796215af/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+195                android:value="cct" />
+195-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/b575f61dd6993583ac7c69c3796215af/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+196        </service>
+197        <service
+197-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+198            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+198-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+199            android:exported="false"
+199-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+200            android:permission="android.permission.BIND_JOB_SERVICE" >
+200-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+201        </service>
+202
+203        <receiver
+203-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+204            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+204-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+205            android:exported="false" />
+205-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/abhayupadhyay/.gradle/caches/transforms-3/2f15c8034f6aea8b10122d8249b4c9b9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+206
+207        <provider
+207-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:25:9-30:39
+208            android:name="com.google.firebase.provider.FirebaseInitProvider"
+208-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:26:13-77
+209            android:authorities="com.dragmart.firebaseinitprovider"
+209-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:27:13-72
+210            android:directBootAware="true"
+210-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:28:13-43
+211            android:exported="false"
+211-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:29:13-37
+212            android:initOrder="100" />
+212-->[com.google.firebase:firebase-common:20.3.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/17f61bb9398e1f5c13b56fc5aeeddc14/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:30:13-36
+213
+214        <activity
+214-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/27ed75583d8888cfd149af38bb71ea35/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+215            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+215-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/27ed75583d8888cfd149af38bb71ea35/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+216            android:exported="false"
+216-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/27ed75583d8888cfd149af38bb71ea35/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+217            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+217-->[com.google.android.gms:play-services-base:18.0.1] /Users/abhayupadhyay/.gradle/caches/transforms-3/27ed75583d8888cfd149af38bb71ea35/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+218
+219        <receiver
+219-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:29:9-33:20
+220            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+220-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:30:13-85
+221            android:enabled="true"
+221-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:31:13-35
+222            android:exported="false" >
+222-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:32:13-37
+223        </receiver>
+224
+225        <service
+225-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:35:9-38:40
+226            android:name="com.google.android.gms.measurement.AppMeasurementService"
+226-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:36:13-84
+227            android:enabled="true"
+227-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:37:13-35
+228            android:exported="false" />
+228-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:38:13-37
+229        <service
+229-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:39:9-43:72
+230            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+230-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:40:13-87
+231            android:enabled="true"
+231-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:41:13-35
+232            android:exported="false"
+232-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:42:13-37
+233            android:permission="android.permission.BIND_JOB_SERVICE" />
+233-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/847b32b408afbc752888409c4ca8a94a/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:43:13-69
+234
+235        <meta-data
+235-->[com.google.android.gms:play-services-basement:18.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/4c5cefc4bced38f73a0cc4404fde07b9/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+236            android:name="com.google.android.gms.version"
+236-->[com.google.android.gms:play-services-basement:18.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/4c5cefc4bced38f73a0cc4404fde07b9/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+237            android:value="@integer/google_play_services_version" />
+237-->[com.google.android.gms:play-services-basement:18.1.0] /Users/abhayupadhyay/.gradle/caches/transforms-3/4c5cefc4bced38f73a0cc4404fde07b9/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+238    </application>
+239
+240</manifest>

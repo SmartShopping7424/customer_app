@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">435182423667-k0tqbbdolpv7ggpsfovrpv2sd68evleg.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">435182423667</string>
+    <string name="google_api_key" translatable="false">AIzaSyBc7CsdJ5ZvtFAfbPYuWc1sEz1FCL5OHA0</string>
+    <string name="google_app_id" translatable="false">1:435182423667:android:288e1d54b7224c17462406</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBc7CsdJ5ZvtFAfbPYuWc1sEz1FCL5OHA0</string>
+    <string name="google_storage_bucket" translatable="false">dragmart.appspot.com</string>
+    <string name="project_id" translatable="false">dragmart</string>
+</resources>

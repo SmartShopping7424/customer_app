@@ -6,7 +6,7 @@ import '../../utils/localstorage.dart';
 final base_url = AppSettings.base_url;
 
 class CustomerAPI {
-//  function to get customer data
+  // function to get customer data
   static getData(String mobile) async {
     var token = await LocalStorage.getLocalStorage('token');
     Map<String, String> qParams = {
@@ -111,6 +111,51 @@ class CustomerAPI {
       return jsonDecode(response.body);
     } catch (e) {
       print("Error in updateCart api ::: $e");
+      return e;
+    }
+  }
+
+  //  function to create customer order
+  static createOrder(payload) async {
+    var token = await LocalStorage.getLocalStorage('token');
+    final url = Uri.parse(base_url + "/customer/order");
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {
+          "Authorization": 'Bearer ' + token,
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(payload),
+      );
+      return jsonDecode(response.body);
+    } catch (e) {
+      print("Error in createOrder api ::: $e");
+      return e;
+    }
+  }
+
+  //  function to get customer order data
+  static getOrder(String mobile) async {
+    var token = await LocalStorage.getLocalStorage('token');
+    Map<String, String> qParams = {
+      'mobile': mobile,
+    };
+    final url = Uri.parse(base_url + "/customer/order")
+        .replace(queryParameters: qParams);
+
+    try {
+      final response = await http.get(
+        url,
+        headers: {
+          "Authorization": 'Bearer ' + token,
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+      return jsonDecode(response.body);
+    } catch (e) {
+      print("Error in getOrder api ::: $e");
       return e;
     }
   }

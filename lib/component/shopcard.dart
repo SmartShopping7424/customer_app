@@ -36,12 +36,10 @@ class _ShopCardState extends State<ShopCard> {
       child: Row(children: [
         // shop image
         Container(
-            width: widthsize * 15 / 100,
-            height: widthsize * 15 / 100,
-            child: FadeInImage(
-              image: AssetImage("assets/shop.png"),
-              placeholder: AssetImage("assets/loader.png"),
-            )),
+          width: widthsize * 15 / 100,
+          height: widthsize * 15 / 100,
+          child: Image.asset("assets/shop.png", fit: BoxFit.scaleDown),
+        ),
 
         // shop name
         Container(

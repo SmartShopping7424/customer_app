@@ -77,6 +77,7 @@ class _AccountState extends ConsumerState<Account> {
     await LocalStorage.setLocalStorage("route_name", "intro");
     await LocalStorage.clearAllLocalStorage();
     await Delay(1000);
+    await ref.read(rootProvider).clearOnLogout();
     Toaster.toastMessage("Logout successful.", context);
     Navigator.pushAndRemoveUntil(
         context, MaterialPageRoute(builder: (context) => App(2)), (_) => false);
@@ -194,7 +195,7 @@ class _AccountState extends ConsumerState<Account> {
                     ),
                     child: watchProvider
                                 .customerProviderWatch.customerdata.gender ==
-                            ''
+                            null
                         ? Text(
                             "HU",
                             style: TextStyle(
@@ -220,8 +221,9 @@ class _AccountState extends ConsumerState<Account> {
                       Container(
                           child: Center(
                               child: Text(
-                        watchProvider.customerProviderWatch.customerdata.name ==
-                                ''
+                        watchProvider
+                                    .customerProviderWatch.customerdata.name ==
+                                null
                             ? "Hi, User"
                             : 'Hi, ' +
                                 (watchProvider.customerProviderWatch
@@ -243,7 +245,7 @@ class _AccountState extends ConsumerState<Account> {
                               child: Text(
                         watchProvider.customerProviderWatch.customerdata
                                     .mobile ==
-                                ''
+                                null
                             ? "+91-1234567890"
                             : '+91-' +
                                 watchProvider

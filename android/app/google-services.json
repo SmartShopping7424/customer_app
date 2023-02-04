@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "435182423667",
+    "project_id": "dragmart",
+    "storage_bucket": "dragmart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435182423667:android:288e1d54b7224c17462406",
+        "android_client_info": {
+          "package_name": "com.dragmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435182423667-k0tqbbdolpv7ggpsfovrpv2sd68evleg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc7CsdJ5ZvtFAfbPYuWc1sEz1FCL5OHA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435182423667-k0tqbbdolpv7ggpsfovrpv2sd68evleg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -96,6 +96,8 @@ class _LocationState extends ConsumerState<Location> {
       if (shop_id == "") {
         Toaster.toastMessage(
             "You are not in the shop. Please explore nearby shops.", context);
+        await readProvider!.cartProviderRead.clearCartData();
+        await readProvider!.billProviderRead.clearBillData();
       }
       Navigator.pushAndRemoveUntil(context,
           MaterialPageRoute(builder: (context) => App(4)), (_) => false);
@@ -136,14 +138,15 @@ class _LocationState extends ConsumerState<Location> {
                     height: widthsize * 70 / 100,
                     margin: EdgeInsets.only(top: heightsize * 15 / 100),
                     decoration: BoxDecoration(
-                      image:
-                          DecorationImage(image: AssetImage("assets/shop.png")),
+                      image: DecorationImage(
+                          image: AssetImage("assets/shop.png"),
+                          fit: BoxFit.scaleDown),
                     ),
                   ),
                   Container(
                       width: widthsize * 70 / 100,
                       child: Text(
-                        'Welcome\nto\n${watchProvider!.shopProviderWatch.shops[0].shopName}',
+                        'Welcome\nto\n${watchProvider.shopProviderWatch.shops[0].shopName}',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: widthsize * 6 / 100,
@@ -159,6 +162,16 @@ class _LocationState extends ConsumerState<Location> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: heightsize * 2 / 100),
+                    child: Text(
+                      "Fetching Location...",
+                      style: TextStyle(
+                          fontSize: widthsize * 6 / 100,
+                          color: AppColors.black_text,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
                   RipplesAnimation(
                     child: Icon(
                       Icons.location_pin,
@@ -168,16 +181,6 @@ class _LocationState extends ConsumerState<Location> {
                     color: AppColors.blue_opacity,
                     size: widthsize * 20 / 100,
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: heightsize * 2 / 100),
-                    child: Text(
-                      "Fetching Location...",
-                      style: TextStyle(
-                          fontSize: widthsize * 6 / 100,
-                          color: AppColors.black_text,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  )
                 ],
               )),
     );

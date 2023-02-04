@@ -23,6 +23,7 @@ class _EmptyDataState extends State<EmptyData> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
+                fit: BoxFit.scaleDown,
                 width: widthsize * 60 / 100,
                 image: AssetImage("assets/nodata.png")),
             Row(
@@ -43,7 +44,7 @@ class _EmptyDataState extends State<EmptyData> {
                         child: MaterialButton(
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
-                          padding: EdgeInsets.only(left: widthsize * 2 / 100),
+                          padding: EdgeInsets.only(left: widthsize * 1 / 100),
                           onPressed: () {
                             widget.buttonPress!();
                           },

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:customer_app/services/customer/customerapi.dart';
 import 'package:customer_app/utils/toaster.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:customer_app/provider/rootprovider.dart';
 import 'package:customer_app/config/colors.dart';
 import 'package:customer_app/utils/helper.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../../utils/localstorage.dart';
 
 class Profile extends ConsumerStatefulWidget {
@@ -425,12 +425,11 @@ class _ProfileState extends ConsumerState<Profile> {
         },
         child: isLoading
             ? Container(
-                width: widthsize * 6 / 100,
-                height: widthsize * 6 / 100,
-                padding: EdgeInsets.all(widthsize * 1 / 100),
-                child: CircularProgressIndicator(
-                  color: AppColors.white,
-                  strokeWidth: 3,
+                child: SpinKitRing(
+                  color: Colors.white,
+                  size: widthsize * 5 / 100,
+                  lineWidth: 2,
+                  duration: Duration(milliseconds: 1000),
                 ),
               )
             : Text(

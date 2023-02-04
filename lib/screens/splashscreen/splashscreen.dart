@@ -18,6 +18,7 @@ class _SplashscreenState extends ConsumerState<Splashscreen> {
 
   getRouteName() async {
     await readProvider!.customerProviderRead.updateCustomerData();
+    await readProvider!.billProviderRead.updateBillId();
     var route_name = await LocalStorage.getLocalStorage("route_name");
 
     // if intro has been done

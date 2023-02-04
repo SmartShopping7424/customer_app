@@ -15,7 +15,12 @@ class CustomerProvider extends ChangeNotifier {
     if (data != null) {
       customerdata = CustomerModel.fromJson(jsonDecode(data));
     }
-
     notifyListeners();
+  }
+
+  // clear customer data
+  clearCustomerData() {
+    customerdata = CustomerModel();
+    return;
   }
 }

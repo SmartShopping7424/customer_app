@@ -108,4 +108,13 @@ class CartProvider extends ChangeNotifier {
 
     await CustomerAPI.updateCart(payload);
   }
+
+  // clear cart data
+  clearCartData() {
+    carts.clear();
+    totalMrpAmount = 0.0;
+    totalSellingAmount = 0.0;
+    LocalStorage.clearLocalStorage('cart');
+    return;
+  }
 }
