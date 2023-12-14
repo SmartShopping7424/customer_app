@@ -60,6 +60,7 @@ class _PaymentState extends ConsumerState<Payment> {
       await Delay(1000);
       Navigator.push(context, MaterialPageRoute(builder: (context) => Bill()));
     } else {
+      Toaster.toastMessage("inside create order", context);
       Toaster.toastMessage(res['message'], context);
     }
   }

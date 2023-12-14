@@ -433,7 +433,7 @@ class _ProfileState extends ConsumerState<Profile> {
                 ),
               )
             : Text(
-                "Submit",
+                "Update",
                 style: TextStyle(
                     fontSize: widthsize * 4 / 100, color: AppColors.white_text),
               ),

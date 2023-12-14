@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:customer_app/component/otpinput.dart';
 import 'package:customer_app/services/customer/customerapi.dart';
 import 'package:customer_app/utils/localstorage.dart';
 import 'package:customer_app/utils/pushNotification.dart';
@@ -83,7 +84,7 @@ class _LoginState extends ConsumerState<Login> {
     final value = otpController.text;
     if (value != "1234") {
       setState(() {
-        otpError = 'Invalid otp';
+        otpError = 'Invalid OTP';
         isLoading = false;
       });
     } else {
@@ -203,8 +204,14 @@ class _LoginState extends ConsumerState<Login> {
                             sendOtp ? "assets/otp.png" : "assets/login.png")),
                   ),
                 ),
-                InputBox(heightsize, widthsize),
-                Button(widthsize, heightsize)
+                sendOtp
+                    ? OTPInput(
+                        mobile: "+91-" + mobileController.text,
+                        errorText: otpError,
+                        isError: otpError.length > 0 ? true : false,
+                        onComplete: (otp) => {otpController.text = otp})
+                    : InputBox(heightsize, widthsize),
+                Button(widthsize, heightsize),
               ],
             )),
       ),

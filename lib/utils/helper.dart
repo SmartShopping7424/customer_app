@@ -143,4 +143,18 @@ class Helper {
     await SystemChannels.platform
         .invokeMethod<void>('SystemNavigator.pop', true);
   }
+
+  // show payment option alert
+  static showPaymentOptionAlert(context, Widget Component) {
+    showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return Container(
+          color: Colors.transparent,
+          child: Center(child: Component),
+        );
+      },
+    );
+  }
 }

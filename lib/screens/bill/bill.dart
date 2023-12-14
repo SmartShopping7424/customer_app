@@ -66,6 +66,13 @@ class _BillState extends ConsumerState<Bill> {
     }
   }
 
+  // on back press function
+  Future<bool> _onBackPressed() async {
+    Toaster.toastMessage(
+        "Please do not press back as we are checking order status.", context);
+    return false;
+  }
+
   @override
   void initState() {
     setState(() {
@@ -89,7 +96,7 @@ class _BillState extends ConsumerState<Bill> {
     RootModel watchProvider = ref.watch(rootProvider).AllProvider();
 
     return WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: _onBackPressed,
       child: Scaffold(
         body: Container(
             width: widthsize,

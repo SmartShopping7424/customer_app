@@ -202,6 +202,10 @@ com/google/android/datatransport/runtime/dagger/multibindings/IntoSet.class
 com/google/android/datatransport/runtime/dagger/multibindings/LongKey.class
 com/google/android/datatransport/runtime/dagger/multibindings/Multibinds.class
 com/google/android/datatransport/runtime/dagger/multibindings/StringKey.class
+com/google/android/gms/auth/api/accounttransfer/AuthenticatorTransferCompletionStatus.class
+com/google/android/gms/auth/api/credentials/Credential.class
+com/google/android/gms/auth/api/credentials/CredentialPickerConfig$Prompt.class
+com/google/android/gms/auth/api/phone/SmsCodeAutofillClient$PermissionState.class
 com/google/android/gms/cloudmessaging/CloudMessage$MessagePriority.class
 com/google/android/gms/common/GmsSignatureVerifier.class
 com/google/android/gms/common/GoogleSignatureVerifier.class
@@ -227,6 +231,7 @@ com/google/android/gms/common/internal/zak.class
 com/google/android/gms/common/util/DynamiteApi.class
 com/google/android/gms/common/util/Strings.class
 com/google/android/gms/flags/FlagSource.class
+com/google/android/gms/internal/auth/zzbv.class
 com/google/android/gms/internal/common/zzac.class
 com/google/android/gms/internal/common/zzag.class
 com/google/android/gms/internal/common/zzah.class

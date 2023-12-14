@@ -65,7 +65,7 @@ class _OrderCardState extends State<OrderCard> {
                             child: Text(
                           e.orderId!,
                           style: TextStyle(
-                              fontSize: widthsize * 3 / 100,
+                              fontSize: widthsize * 3.5 / 100,
                               color: AppColors.black_text),
                         )),
 
@@ -74,7 +74,7 @@ class _OrderCardState extends State<OrderCard> {
                             child: Text(
                           "Total Amount   ₹ " + e.totalAmount.toString(),
                           style: TextStyle(
-                              fontSize: widthsize * 2.5 / 100,
+                              fontSize: widthsize * 2.8 / 100,
                               color: AppColors.black_text_opacity),
                         )),
                       ],
@@ -88,7 +88,7 @@ class _OrderCardState extends State<OrderCard> {
                       child: Text(
                     Helper.dateConverter(e.createdAt!),
                     style: TextStyle(
-                        fontSize: widthsize * 2.5 / 100,
+                        fontSize: widthsize * 2.8 / 100,
                         color: AppColors.black_text_opacity),
                   )),
                 ],
@@ -116,7 +116,7 @@ class _OrderCardState extends State<OrderCard> {
                           Text(
                             e.totalItem.toString() + " Items",
                             style: TextStyle(
-                                fontSize: widthsize * 2.5 / 100,
+                                fontSize: widthsize * 2.7 / 100,
                                 color: AppColors.black_text),
                           ),
                         ],
@@ -144,7 +144,7 @@ class _OrderCardState extends State<OrderCard> {
                             Text(
                               "View Details",
                               style: TextStyle(
-                                  fontSize: widthsize * 2.5 / 100,
+                                  fontSize: widthsize * 2.7 / 100,
                                   color: AppColors.blue),
                             ),
                             Icon(

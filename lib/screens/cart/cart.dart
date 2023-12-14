@@ -1,13 +1,17 @@
 import 'package:customer_app/component/cartcard.dart';
 import 'package:customer_app/component/emptydata.dart';
+import 'package:customer_app/component/selectpaymentoption.dart';
 import 'package:customer_app/config/colors.dart';
 import 'package:customer_app/provider/rootprovider.dart';
+import 'package:customer_app/screens/payatcounter/payatcounter.dart';
 import 'package:customer_app/screens/payment/payment.dart';
 import 'package:customer_app/utils/barcode.dart';
 import 'package:customer_app/utils/toaster.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../services/customer/customerapi.dart';
 import '../../utils/helper.dart';
+import '../../utils/localstorage.dart';
 
 class Cart extends ConsumerStatefulWidget {
   const Cart({Key? key}) : super(key: key);
@@ -63,7 +67,12 @@ class _CartState extends ConsumerState<Cart> {
 
   // on checkout
   onCheckout() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Payment()));
+    Helper.showPaymentOptionAlert(
+        context,
+        SelectPaymentOptions(
+          onPayAtCounter: () => payAtCounter(),
+          onPayOnline: () => payOnline(),
+        ));
   }
 
   // update state
@@ -73,6 +82,39 @@ class _CartState extends ConsumerState<Cart> {
       shopId = readProvider!.shopProviderRead.shops[0].shopId!;
       insideShop = readProvider!.shopProviderRead.insideShop;
     });
+  }
+
+  // show payment options
+  payAtCounter() async {
+    Navigator.pop(context);
+    Helper.fullScreenLoader(context);
+
+    // define payload
+    var payload = {
+      "mobile": mobile,
+      "shop_id": shopId,
+      "amount": readProvider!.cartProviderRead.totalSellingAmount
+    };
+
+    // call the api
+    var res = await CustomerAPI.createPayAtCounter(payload);
+    if (res['code'] == 200) {
+      LocalStorage.setLocalStorage("payment_id", res['data']['payment_id']);
+      LocalStorage.setLocalStorage(
+          "payment_amount", readProvider!.cartProviderRead.totalSellingAmount.toString());
+      await Delay(2000);
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => PayAtCounterScreen()));
+    } else {
+      Toaster.toastMessage(res['message'], context);
+      Navigator.pop(context);
+    }
+  }
+
+  // pay online
+  payOnline() {
+    Navigator.pop(context);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Payment()));
   }
 
   @override

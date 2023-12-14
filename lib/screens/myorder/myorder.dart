@@ -21,6 +21,7 @@ class _MyOrderState extends ConsumerState<MyOrder> {
   getOrderData() async {
     await readProvider!.orderProviderRead.updateOrderData(
         mobile: readProvider!.customerProviderRead.customerdata.mobile!);
+    await Delay(1000);
     setState(() {
       render = true;
     });

@@ -159,4 +159,25 @@ class CustomerAPI {
       return e;
     }
   }
+
+  //  function to create pay at counter
+  static createPayAtCounter(payload) async {
+    var token = await LocalStorage.getLocalStorage('token');
+    final url = Uri.parse(base_url + "/customer/pay_at_counter");
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {
+          "Authorization": 'Bearer ' + token,
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(payload),
+      );
+      return jsonDecode(response.body);
+    } catch (e) {
+      print("Error in createOrder api ::: $e");
+      return e;
+    }
+  }
 }

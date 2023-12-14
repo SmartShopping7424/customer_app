@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:math';
+import 'package:customer_app/config/setting.dart';
 import 'package:customer_app/utils/helper.dart';
 import 'package:customer_app/utils/toaster.dart';
 import 'package:flutter/material.dart';
@@ -8,17 +10,25 @@ import '../services/customer/customerapi.dart';
 import '../services/product/productapi.dart';
 import 'localstorage.dart';
 
+Random random = new Random();
+
 class Barcode {
   // scan barcode
   static scanBarcodeAndFetchProduct(context, shop_id, mobile) async {
-    var barcode;
+    var randomBarcode =
+        AppSettings.env == "prod" ? [] : ["1001", "1002", "1003", "1005"];
+    var barcode = AppSettings.env == "prod"
+        ? ""
+        : randomBarcode[random.nextInt(randomBarcode.length)];
 
     // barcode scanner
-    try {
-      barcode = await FlutterBarcodeScanner.scanBarcode(
-          "#FFFFFF", "Cancel", false, ScanMode.DEFAULT);
-    } on PlatformException {
-      barcode = "-1";
+    if (AppSettings.env == "prod") {
+      try {
+        barcode = await FlutterBarcodeScanner.scanBarcode(
+            "#FFFFFF", "Cancel", false, ScanMode.DEFAULT);
+      } on PlatformException {
+        barcode = "-1";
+      }
     }
 
     if (barcode != "-1") {

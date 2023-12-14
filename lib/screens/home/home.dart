@@ -5,9 +5,12 @@ import 'package:customer_app/config/colors.dart';
 import 'package:customer_app/provider/rootprovider.dart';
 import 'package:customer_app/screens/account/account.dart';
 import 'package:customer_app/screens/cart/cart.dart';
+import 'package:customer_app/utils/localstorage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../payatcounter/payatcounter.dart';
 
 class Homescreen extends ConsumerStatefulWidget {
   const Homescreen({Key? key}) : super(key: key);
@@ -24,12 +27,23 @@ class _HomescreenState extends ConsumerState<Homescreen> {
 
   // check if bill id is available
   checkVerificationStatus() async {
-    var id = readProvider!.billProviderRead.billId;
-    if (id != "") {
-      setState(() {
-        billId = id;
-        verified = false;
-      });
+    // check for pay at counter verification first
+    var payment_id = await LocalStorage.getLocalStorage("payment_id");
+    if (payment_id != null) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => PayAtCounterScreen()));
+    }
+
+    // if payment id null
+    else {
+      // check for bill verification
+      var id = readProvider!.billProviderRead.billId;
+      if (id != "") {
+        setState(() {
+          billId = id;
+          verified = false;
+        });
+      }
     }
   }
 
@@ -118,7 +132,7 @@ class _HomescreenState extends ConsumerState<Homescreen> {
             ),
           ),
 
-          // show if not verified
+          // show if bill not verified
           verified
               ? Container()
               : ShowQr(
